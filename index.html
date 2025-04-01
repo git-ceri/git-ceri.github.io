@@ -1,4 +1,7 @@
 <script>
+//https://docs.github.com/de/rest/git/trees?apiVersion=2022-11-28
+//ml-01.04.2025-1507
+
 async function gitget() {
 let url = 'https://api.github.com/repos/git-ceri/git-ceri.github.io/git/trees/main';
 
@@ -6,18 +9,24 @@ let data = fetch(url)
 .then(res => {return res.json();})
 .catch(err => console.log(err));
 
-const data2 = await data;
+const data_done = await data;
 
-document.write("<h1>CERI Projects</h1>");
+document.write('<h1><a href="https://robotik.thws.de/forschung/projekte/">');
+document.write('<img alt="CERI" src="static/images/git.ceri.logo.png" height="300" /><a></h1>');
+document.write('<h2>Projects</h2>');
 
-for (let i = 0; i < data2.tree.length; i++) {
+for (let i = 0; i < data_done.tree.length; i++) {
   	//console.log('Element ',i,': ', data2.tree[i].path);
-    document.write('<a href="https://git-ceri.github.io/' + data2.tree[i].path + '/">',data2.tree[i].path + '</a><br>');
-  };
-//document.write('<a href="https://git-ceri.github.io/' + data2.tree[0].path + '/">',data2.tree[0].path + '</a>'); //debug
-document.write("<p>This is an automacly generated listing of subpages. Maybe not all links work yet.</p>");
+    if ("index.html" != data_done.tree[i].path && "static" != data_done.tree[i].path ) {
+    		document.write('<a href="https://git-ceri.github.io/' + data_done.tree[i].path + '/">',data_done.tree[i].path + '</a><br>');
+    } //ende if
+} //ende for
 
-}
+
+//document.write('<a href="https://git-ceri.github.io/' + data_done.tree[0].path + '/">',data_done.tree[0].path + '</a>'); //debug
+document.write("<p>This is an automatically generated listing of subpages.<br> Maybe not all links work yet.</p>");
+
+} //end function
 
 gitget();
 
