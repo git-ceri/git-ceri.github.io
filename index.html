@@ -17,8 +17,9 @@ document.write('<h2>Projects</h2>');
 
 for (let i = 0; i < data_done.tree.length; i++) {
   	//console.log('Element ',i,': ', data2.tree[i].path);
-    if ("index.html" != data_done.tree[i].path && "static" != data_done.tree[i].path ) {
-    		document.write('<a href="https://git-ceri.github.io/' + data_done.tree[i].path + '/">',data_done.tree[i].path + '</a><br>');
+    let p_name = data_done.tree[i].path;
+    if ("index.html" != p_name && "static" != p_name && ".gitignore" != p_name) {
+    		document.write('<a href="https://git-ceri.github.io/' + p_name + '/">',p_name + '</a><br>');
     } //ende if
 } //ende for
 
