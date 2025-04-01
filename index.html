@@ -1,0 +1,24 @@
+<script>
+async function gitget() {
+let url = 'https://api.github.com/repos/git-ceri/git-ceri.github.io/git/trees/main';
+
+let data = fetch(url)
+.then(res => {return res.json();})
+.catch(err => console.log(err));
+
+const data2 = await data;
+
+document.write("<h1>CERI Projects</h1>");
+
+for (let i = 0; i < data2.tree.length; i++) {
+  	//console.log('Element ',i,': ', data2.tree[i].path);
+    document.write('<a href="https://git-ceri.github.io/' + data2.tree[i].path + '/">',data2.tree[i].path + '</a><br>');
+  };
+//document.write('<a href="https://git-ceri.github.io/' + data2.tree[0].path + '/">',data2.tree[0].path + '</a>'); //debug
+document.write("<p>This is an automacly generated listing of subpages. Maybe not all links work yet.</p>");
+
+}
+
+gitget();
+
+</script>
