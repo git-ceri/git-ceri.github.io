@@ -1,3 +1,4 @@
+
 <script>
 //https://docs.github.com/de/rest/git/trees?apiVersion=2022-11-28
 //ml-01.04.2025-1507
@@ -13,6 +14,7 @@ const data_done = await data;
 
 document.write('<h1><a href="https://robotik.thws.de/forschung/projekte/">');
 document.write('<img alt="CERI" src="static/images/git.ceri.logo.png" height="300" /><a></h1>');
+document.write('<div id="box1" style="padding: 50px;">');
 document.write('<h2>Projects</h2>');
 
 for (let i = 0; i < data_done.tree.length; i++) {
@@ -26,9 +28,9 @@ for (let i = 0; i < data_done.tree.length; i++) {
 
 //document.write('<a href="https://git-ceri.github.io/' + data_done.tree[0].path + '/">',data_done.tree[0].path + '</a>'); //debug
 document.write("<p>This is an automatically generated listing of subpages.<br> Maybe not all links work yet.</p>");
-
+document.write('</div>');
 } //end function
 
-gitget();
 
+gitget();
 </script>
