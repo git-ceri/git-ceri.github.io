@@ -12,10 +12,10 @@ let data = fetch(url)
 
 const data_done = await data;
 
-document.write('<h1><a href="https://robotik.thws.de/forschung/projekte/">');
-document.write('<img alt="CERI" src="static/images/git.ceri.logo.png" height="300" /><a></h1>');
-document.write('<div id="box1" style="padding: 50px;">');
-document.write('<h2>Projects</h2>');
+document.write('<a href="https://robotik.thws.de/forschung/projekte/">');
+document.write('<img alt="CERI" src="static/images/git.ceri.logo.png" height="300" /><a>');
+document.write('<div id="box1" style="padding-left: 175px;">');
+document.write('<h1>Projects</h1>');
 
 for (let i = 0; i < data_done.tree.length; i++) {
   	//console.log('Element ',i,': ', data2.tree[i].path);
