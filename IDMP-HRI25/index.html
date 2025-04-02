@@ -249,18 +249,22 @@ and accessibility of HRC research in real dynamic environments.
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <p>
-            We evaluate our method in a mock human-robot interaction scene where the robot is tasked to cycle between two waypoints. During the execution, a human enters the workspace and places their arm in the way of the robot.
-            We compare the behaviour of our framework against an occupancy-based reactive method implemented in ROS package MoveIt. This baseline method builds an <a href="https://github.com/OctoMap/octomap?tab=readme-ov-file">Octomap</a> which is continuously updated with the sensor input. A trajectory is then planned using the <a href="https://arxiv.org/abs/1507.07602">Bi-directional Fast Marching Tree (BFMT*)</a>.
-            During execution the trajectory is checked for possible collisions which then triggers replanning.
+            We evaluated our grasp pose generation method on a diverse
+set of objects in simulation, shown in the figure below. As can be see,
+our method can handle flat and curved surfaces.
+
           </p>
-          <img src="static/images/moveit_vs_rmp_V2.png" alt="Avatar woman">
+          <img src="static/images/grasp_pose.jpeg" alt="Avatar woman">
           <!--p>
             The following figure shows the resulting trajectories for both our method and the baseline. Compared to the baseline our method is able to react more naturally to dynamic obstacles whereas the baseline method awkwardly stops as it replans.
           </p>
           <img src="static/images/moveit_rmp.png" alt="Avatar woman"-->
           <p>
-            As can be seen in the following Table the trajectories produced by our method result in much smoother trajectories. Notably the mean squared jerk and change in curvature were approximately 2x and 3x lower, respectively, than the baseline.
-          </p>
+Lastly, we validate our object grasping method in a real
+world scenario where a human places an object in a given pose
+for the arm to approach and then grasp, see figs. 11a and 11b.
+As can be seen in Fig. 11c our grasp pose generation method
+transfers to real world sensor data.          </p>
           <img src="static/images/comparison_rmp_moveit.png" alt="Avatar woman">
           <!--div style="display: flex;">
             <div class="center">
