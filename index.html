@@ -20,7 +20,29 @@ document.write('<h1>Projects</h1>');
 for (let i = 0; i < data_done.tree.length; i++) {
   	//console.log('Element ',i,': ', data2.tree[i].path);
     let p_name = data_done.tree[i].path;
-    if ("index.html" != p_name && "static" != p_name && ".gitignore" != p_name) {
+    if (p_name == "index.html"){
+    		//pass
+    } else if (p_name == "static") {
+    		//pass
+    } else if (p_name == ".gitignore") {
+    		//pass
+    } else if (p_name == "KOPRO-HRI23") {
+    		//pass
+    } else if (p_name == "KOPRO-HRI24A) {
+    		//pass
+    } else if (p_name == "KOPRO-HRI24B") {
+    		//pass
+    } else if (p_name == "KOPRO-HRI25A") {
+    		//pass
+    } else if (p_name == "KOPRO-HRI25B") {
+    		//pass
+    } else if (p_name == "KOPRO-ICAR23") {
+    		//pass
+    } else if (p_name == "KOPRO-IEEESW24") {
+    		//pass
+    } else if (p_name == "KOPRO-MDPI25") {
+    		//pass
+    } else {
     		document.write('<a href="https://git-ceri.github.io/' + p_name + '/">',p_name + '</a><br>');
     } //ende if
 } //ende for
